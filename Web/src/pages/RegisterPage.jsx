@@ -30,11 +30,11 @@ export const RegisterPage = () => {
 
       if (response.status === 200) {
         // Registro exitoso, puedes redirigir al usuario al dashboard o realizar otras acciones
-        navigate('/dashboard', {
+        navigate('/login', {
           replace: true,
           state: {
-            logged: true,
-            nombre: nombre,
+            logged: false,
+            
           },
         });
 
