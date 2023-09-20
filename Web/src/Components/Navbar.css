@@ -14,7 +14,7 @@
     margin-top: 10px;
 }
 
-button.Registrarse {
+.registrarse {
     background: rgb(0, 0, 0);
     color: #d9dad9;
     text-align: center;
@@ -24,12 +24,16 @@ button.Registrarse {
     font-weight: bold;
     transition-duration: 0.4s;
     border: none;
-    border-radius: 5px;
-    padding: 5px 5px;
+    border-radius: 10px;
+    padding: 8px 8px;
     margin-right: 10px;
 }
 
-.Registrarse:hover {
+.registrarse:hover {
     background: white;
     color: black;
+}
+.username{
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
 }

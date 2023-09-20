@@ -35,7 +35,9 @@ export const Navbar = () => {
         ) : (
           <nav>
             <Link to='/login'>Iniciar sesión</Link>
-            <Link to='/register'>Registrarse</Link>
+            <button className='registrarse'>
+              <Link to='/register'>Registrarse</Link>
+            </button>
           </nav>
         )}
       </header>

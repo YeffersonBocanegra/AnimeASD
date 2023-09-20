@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from '../hook/useForm';
 import axios from 'axios';
+import './RegisterPage.css'
 
 export const RegisterPage = () => {
   const navigate = useNavigate();
@@ -142,4 +143,3 @@ export const RegisterPage = () => {
     </div>
   );
 };
-

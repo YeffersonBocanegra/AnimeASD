@@ -46,7 +46,6 @@
     margin-top: 10px;    
     overflow: hidden;    
     max-width: 30ch; /* Ajusta este valor según tus necesidades */
-    text-align: center;
     text-overflow: ellipsis;
   }
   
