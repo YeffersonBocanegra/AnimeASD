@@ -32,16 +32,16 @@ export const DashboardPage = () => {
       <div className="animes">
         {data.map((d, i) => (
           <div key={i} className="producto">
-              <div className="producto_img">
-                <img src={d.imagen} alt="" />
-              </div>
+            <div className="producto_img">
+              <img src={d.imagen} alt="" />
+            </div>
             <div className="producto_footer">
-              <h1 className="titulo">{d.titulo}</h1>              
+              <h1 className="titulo">{d.titulo}</h1>
               <h2 className="descripcion">{d.descripcion}</h2>
               <h2 className='price'>Uds: {d.cantidad_almacen}</h2>
-              <h2 className='estado'>
+              <p className='estado'>
                 {d.estado === "0" ? "Alquilado" : "Disponible"}
-              </h2>
+              </p>
               <p className="price">${d.precio}</p>
             </div>
             <div className="buttom">
@@ -50,10 +50,10 @@ export const DashboardPage = () => {
           </div>
         ))}
       </div>
-      
-    </div>   
-    
-  );  
+
+    </div>
+
+  );
 };
 
 
