@@ -25,7 +25,6 @@ export const DashboardPage = () => {
         console.error(error);
       });
   }, []); // La dependencia vacía asegura que este efecto solo se ejecute una vez
-
   return (
     <div>
       <h1 className="title">Animes</h1>
@@ -40,7 +39,9 @@ export const DashboardPage = () => {
               <h1 className="titulo">{d.titulo}</h1>              
               <h2 className="descripcion">{d.descripcion}</h2>
               <h2 className='price'>Uds: {d.cantidad_almacen}</h2>
-              <h2 className='price'>{d.estado}</h2>
+              <h2 className='estado'>
+                {d.estado === "0" ? "Alquilado" : "Disponible"}
+              </h2>
               <p className="price">${d.precio}</p>
             </div>
             <div className="buttom">
