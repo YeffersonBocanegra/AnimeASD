@@ -39,7 +39,8 @@ export const DashboardPage = () => {
             <div className="producto_footer">
               <h1 className="titulo">{d.titulo}</h1>              
               <h2 className="descripcion">{d.descripcion}</h2>
-              <h2 className='price'>Uds. Disponible: {d.cantidad_almacen}</h2>
+              <h2 className='price'>Uds: {d.cantidad_almacen}</h2>
+              <h2 className='price'>{d.estado}</h2>
               <p className="price">${d.precio}</p>
             </div>
             <div className="buttom">
