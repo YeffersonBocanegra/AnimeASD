@@ -101,29 +101,40 @@ router.delete('/api/usuario/eliminar/:usuario', async (req, res) => {
 router.post('/api/usuario/login', async (req, res) => {
     const { usuario, contrasena } = req.body;
     try {
-        // Verificar si existe un usuario con el nombre de usuario proporcionado
-        const [existingUsers] = await pool.query(
-            'SELECT * FROM usuario WHERE usuario = ?',
-            [usuario]
-        );
-        // Comprobar si se encontró un usuario
-        if (existingUsers.length === 0) {
-            return res.status(404).json({ message: 'Usuario incorrecto' });
-        }
-
-        // Comparar la contraseña proporcionada con el hash almacenado en la base de datos
-        const user = existingUsers[0];
-        const password = (contrasena== user.contrasena);
-
-        if (!password) {
-            return res.status(401).json({ message: 'Contraseña incorrecta' });
-        }
-        // Autenticación exitosa
-        res.json({ message: '¡Bienvenid@!' });
+      // Verificar si existe un usuario con el nombre de usuario proporcionado
+      const [existingUsers] = await pool.query(
+        'SELECT * FROM usuario WHERE usuario = ?',
+        [usuario]
+      );
+      // Comprobar si se encontró un usuario
+      if (existingUsers.length === 0) {
+        return res.status(404).json({ message: 'Usuario incorrecto' });
+      }
+  
+      // Comparar la contraseña proporcionada con el hash almacenado en la base de datos
+      const user = existingUsers[0];
+      const passwordMatch = (contrasena === user.contrasena);
+  
+      if (!passwordMatch) {
+        return res.status(401).json({ message: 'Contraseña incorrecta' });
+      }
+  
+      // Autenticación exitosa, almacenar la información del usuario en una variable
+      const userInfo = {
+        id_usu: user.id_usu, // Id del usuario en DB
+        usuario: user.usuario,// Usuario del DB
+        correo: user.correo,// Correo del DB
+        contrasena: user.contrasena,// contraseña del DB
+      };
+      console.log(userInfo);
+  
+      // Devolver la información del usuario en la respuesta JSON
+      res.json(userInfo);
     } catch (error) {
-        console.error('Error al Ingresar:', error);
-        res.status(500).json({ error: 'No se pudo ingresar debido a un error interno' });
+      console.error('Error al Ingresar:', error);
+      res.status(500).json({ error: 'No se pudo ingresar debido a un error interno' });
     }
-});
+  });
+  
 
 export default router; 

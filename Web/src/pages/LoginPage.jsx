@@ -10,7 +10,6 @@ export const LoginPage = () => {
     usuario: '',
     contrasena: '',
   });
-  console.log(useForm);
 
   const [error, setError] = useState(null);
 
@@ -22,7 +21,7 @@ export const LoginPage = () => {
         usuario: usuario,
         contrasena: contrasena,
       });
-
+      console.log(response);
       if (response.status === 200) {
         // Inicio de sesión exitoso, redirige al usuario al dashboard o realiza otras acciones
         navigate('/dashboard', {
@@ -32,6 +31,7 @@ export const LoginPage = () => {
             usuario,
           },
         });
+        console.log(user);
       } else {
         // Si la respuesta no es exitosa, muestra un mensaje de error basado en la respuesta
         if (response.data.error === 'usuario_incorrecto') {
