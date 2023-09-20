@@ -27,7 +27,7 @@ export const HomePage = () => {
       items: 1
     }
   };
-  
+
   // Función para manejar el clic en el botón "Alquilar"
   const handleAlquilarClick = () => {
     if (isLoggedIn) {
@@ -43,8 +43,10 @@ export const HomePage = () => {
     <>
       <div className="carousel">
         <Carousel
+          pauseOnHover={false}
+          autoPlay={true}
           additionalTransfrom={0}
-          arrows
+          arrows={false}
           autoPlaySpeed={3000}
           centerMode={false}
           className=""
@@ -56,7 +58,6 @@ export const HomePage = () => {
           itemClass=""
           keyBoardControl
           minimumTouchDrag={80}
-          pauseOnHover
           renderArrowsWhenDisabled={false}
           renderButtonGroupOutside={false}
           renderDotsOutside
@@ -92,7 +93,7 @@ export const HomePage = () => {
           slidesToSlide={1}
           swipeable
         >
-           <img
+          <img
             src="https://i.pinimg.com/originals/b3/f0/14/b3f0143b2fd7c5dbc47a38b740b0999f.jpg"
             style={{
               display: 'block',
@@ -146,7 +147,7 @@ export const HomePage = () => {
               width: '100%'
             }}
           />
-        </Carousel>       
+        </Carousel>
       </div>
 
 
@@ -160,12 +161,12 @@ export const HomePage = () => {
               </div>
             </a>
             <div className="producto_footer">
-              <h1 className="titulo">Overlord</h1>              
+              <h1 className="titulo">Overlord</h1>
               <h2 className="descripcion texto-limitado">Un veterano jugador decide quedarse en él juego hasta el cierre. El problema es que pasa la hora de cierre y los NPC han ganado conciencia propia</h2>
               <p className="price"> 70000 </p>
             </div>
             <div className="buttom">
-              <button className='btn' onClick={handleAlquilarClick}> 
+              <button className='btn' onClick={handleAlquilarClick}>
                 Alquilar
               </button>
             </div>
@@ -177,12 +178,12 @@ export const HomePage = () => {
               </div>
             </a>
             <div className="producto_footer">
-              <h1 className="titulo">Black Clover</h1>              
+              <h1 className="titulo">Black Clover</h1>
               <h2 className="descripcion">En un mundo en el que la magia lo es todo, Asta y Yuno son dos niños huerfanos. Yuno crece grandes poderes mágicos, Asta parece no tener magia.</h2>
               <p className="price"> 60000 </p>
             </div>
             <div className="buttom">
-              <button className='btn' onClick={handleAlquilarClick}> 
+              <button className='btn' onClick={handleAlquilarClick}>
                 Alquilar
               </button>
             </div>
@@ -194,12 +195,12 @@ export const HomePage = () => {
               </div>
             </a>
             <div className="producto_footer">
-              <h1 className="titulo">Bleach</h1>              
+              <h1 className="titulo">Bleach</h1>
               <h2 className="descripcion">Narra las aventuras de Ichigo Kurosaki, un adolescente que accidentalmente absorbe los poderes de una shinigami Cegador de Almas.</h2>
               <p className="price"> 80000 </p>
             </div>
             <div className="buttom">
-              <button className='btn' onClick={handleAlquilarClick}> 
+              <button className='btn' onClick={handleAlquilarClick}>
                 Alquilar
               </button>
             </div>
@@ -211,12 +212,12 @@ export const HomePage = () => {
               </div>
             </a>
             <div className="producto_footer">
-              <h1 className="titulo">Baki</h1>              
+              <h1 className="titulo">Baki</h1>
               <h2 className="descripcion">Un joven luchador que entrena intensamente para superar a su padre Yujiro Hanma que es uno de los luchadores más potentes del mundo..</h2>
               <p className="price"> 55000 </p>
             </div>
             <div className="buttom">
-              <button className='btn' onClick={handleAlquilarClick}> 
+              <button className='btn' onClick={handleAlquilarClick}>
                 Alquilar
               </button>
             </div>
@@ -228,18 +229,18 @@ export const HomePage = () => {
               </div>
             </a>
             <div className="producto_footer">
-              <h1 className="titulo">One Piece</h1>              
+              <h1 className="titulo">One Piece</h1>
               <h2 className="descripcion">Monkey D. Luffy se niega a que nadie se interponga en su camino para convertirse en Rey de los Piratas. Se lanza a surcar los mares y se convertirá en un capitán.</h2>
               <p className="price"> 85000 </p>
             </div>
             <div className="buttom">
-              <button className='btn' onClick={handleAlquilarClick}> 
+              <button className='btn' onClick={handleAlquilarClick}>
                 Alquilar
               </button>
             </div>
-          </div>         
+          </div>
         </div>
-        
+
       </div>
       <div className='sction-oscuro'>
         <h1 className="titulo">Podria Interesarte</h1>
