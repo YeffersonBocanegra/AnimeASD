@@ -1,11 +1,11 @@
-import {Router} from 'express';//Permite crear seccion de rutas
+import { Router } from 'express';//Permite crear seccion de rutas
 import { pool } from '../../db.js';// Llama la conexion a DB
 //import bcrypt from 'bcrypt'; // Encriptar las contraseñas..
 
 const router = Router();
 
 //Mostrar Usuarios
-router.get('/api/usuario/mostrar', async (req, res) => { 
+router.get('/api/usuario/mostrar', async (req, res) => {
     try {
         const [resultado] = await pool.query(
             'SELECT * FROM usuario AS result',
@@ -13,14 +13,14 @@ router.get('/api/usuario/mostrar', async (req, res) => {
         res.json(resultado);
     } catch (error) {
         console.error('Error al obtener usuarios:', error);
-        res.status(500).json({ error: 'No se pudo obtener usuarios' }); 
+        res.status(500).json({ error: 'No se pudo obtener usuarios' });
     }
 });
 
 //Mostrar un Usuario
 router.get('/api/usuario/mostrar/:id', async (req, res) => {
     try {
-        const [rows] = await pool.query('SELECT * FROM usuario WHERE id_usu = ?', [req.params.id]);        
+        const [rows] = await pool.query('SELECT * FROM usuario WHERE id_usu = ?', [req.params.id]);
         if (rows.length <= 0) return res.status(404).json({ message: 'La Identificacion no Existe' });
         res.json(rows);
     } catch (error) {
@@ -113,7 +113,7 @@ router.post('/api/usuario/login', async (req, res) => {
 
         // Comparar la contraseña proporcionada con el hash almacenado en la base de datos
         const user = existingUsers[0];
-        const password = (contrasena== user.contrasena);
+        const password = (contrasena == user.contrasena);
 
         if (!password) {
             return res.status(401).json({ message: 'Contraseña incorrecta' });
